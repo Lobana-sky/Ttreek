@@ -11,12 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('apps', function (Blueprint $table) {
+        Schema::create('ttreeks', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->integer('player_number');
-            $table->integer('price');
-            $table->binary('image');
+            $table->integer('user_id');
+            $table->string('ime');
             $table->timestamps();
         });
     }
@@ -26,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('apps');
+        Schema::dropIfExists('ttreeks');
     }
 };

@@ -11,12 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('apps', function (Blueprint $table) {
+        Schema::create('vips', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->integer('player_number');
-            $table->integer('price');
-            $table->binary('image');
+            $table->integer('commession_percent');
             $table->timestamps();
         });
     }
@@ -26,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('apps');
+        Schema::dropIfExists('vips');
     }
 };
