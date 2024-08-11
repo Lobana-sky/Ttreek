@@ -20,9 +20,9 @@ class User extends Authenticatable
         return $this->hasMany(Vip::class);
     }
 
-    public function ttreeks(): HasMany
+    public function turkifications(): HasMany
     {
-        return $this->hasMany(Ttreek::class);
+        return $this->hasMany(Turkification::class);
     }
 
     public function apps(): BelongsToMany

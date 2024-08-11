@@ -8,19 +8,19 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 
-class Ttreek extends Model
+class Turkification extends Model
 {
 
     use HasFactory, Notifiable;
 
     /**
-     * Get the user that owns the ttreek.
+     * Get the user that owns the turkification.
      */
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
-    
+
     /**
      * The attributes that are mass assignable.
      *
