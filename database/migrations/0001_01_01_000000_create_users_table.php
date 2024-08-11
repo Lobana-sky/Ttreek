@@ -20,7 +20,8 @@ return new class extends Migration
             $table->integer('role');//1,2,3,4  --- 1 is admin
             $table->integer('agent_id');
             $table->integer('vip_id');
-            $table->binary('image');
+            $table->foreign('vip_id')->references('id')->on('vips')->onDelete('cascade');
+            $table->string('image');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

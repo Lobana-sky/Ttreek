@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->integer('player_number');
             $table->integer('price');
-            $table->binary('image');
+            $table->string('image');
             $table->timestamps();
         });
     }
