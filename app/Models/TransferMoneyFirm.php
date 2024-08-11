@@ -7,11 +7,10 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
-
-class App extends Model
+class TransferMoneyFirm extends Model
 {
     use HasFactory, Notifiable;
-    
+
     /**
      * The attributes that are mass assignable.
      *
@@ -19,15 +18,13 @@ class App extends Model
      */
     protected $fillable = [
         'name',
-        'player_no',
-        'price',
-        'image',
+        'iban',
+        'account_name',
     ];
     
     public function users(): BelongsToMany
     {
         return $this->belongsToMany(User::class);
     }
-
-
+    
 }

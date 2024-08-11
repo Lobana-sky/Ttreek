@@ -11,14 +11,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Vip extends Model
 {
     use HasFactory, Notifiable;
-    
-    /**
-     * Get the user that owns the vip.
-     */
-    public function user(): BelongsTo
-    {
-        return $this->belongsTo(User::class);
-    }
+
     /**
      * The attributes that are mass assignable.
      *
@@ -27,4 +20,12 @@ class Vip extends Model
     protected $fillable = [
         'commession_percent',
     ];
+    
+    /**
+     * Get the user that owns the vip.
+     */
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
 }

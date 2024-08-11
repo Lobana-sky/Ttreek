@@ -7,7 +7,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 
-class OrderApp extends Model
+class AppOrder extends Model
 {
     use HasFactory, Notifiable;
 

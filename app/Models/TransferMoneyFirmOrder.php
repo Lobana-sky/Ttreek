@@ -5,29 +5,23 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
-
-class App extends Model
+class TransferMoneyFirmOrder extends Model
 {
     use HasFactory, Notifiable;
-    
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
-        'player_no',
-        'price',
-        'image',
+        'transfer_money_firm_id',
+        'user_id',
+        'sender',
+        'value',
+        'currency',
+        'dekont_no',
+        'password',
     ];
-    
-    public function users(): BelongsToMany
-    {
-        return $this->belongsToMany(User::class);
-    }
-
-
 }

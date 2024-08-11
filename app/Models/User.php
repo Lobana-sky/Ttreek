@@ -15,21 +15,7 @@ class User extends Authenticatable
 
     use HasFactory, Notifiable;
 
-    public function vips(): HasMany
-    {
-        return $this->hasMany(Vip::class);
-    }
-
-    public function turkifications(): HasMany
-    {
-        return $this->hasMany(Turkification::class);
-    }
-
-    public function apps(): BelongsToMany
-    {
-        return $this->belongsToMany(App::class);
-    }
-
+   
 
     /**
      * The attributes that are mass assignable.
@@ -72,4 +58,25 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function vips(): HasMany
+    {
+        return $this->hasMany(Vip::class);
+    }
+
+    public function turkifications(): HasMany
+    {
+        return $this->hasMany(Turkification::class);
+    }
+
+    public function transfer_money_firms(): BelongsToMany
+    {
+        return $this->belongsToMany(TransferMoneyFirm::class);
+    }
+
+    public function apps(): BelongsToMany
+    {
+        return $this->belongsToMany(App::class);
+    }
+
 }

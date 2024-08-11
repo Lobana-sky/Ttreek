@@ -11,12 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('apps', function (Blueprint $table) {
+        Schema::create('transfer_money_firms', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->integer('player_no');
-            $table->integer('price');
-            $table->string('image');
+            $table->string('iban');
+            $table->string('account_name');
             $table->timestamps();
         });
     }
@@ -26,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('apps');
+        Schema::dropIfExists('transfer_money_firms');
     }
 };

@@ -12,15 +12,7 @@ class Turkification extends Model
 {
 
     use HasFactory, Notifiable;
-
-    /**
-     * Get the user that owns the turkification.
-     */
-    public function user(): BelongsTo
-    {
-        return $this->belongsTo(User::class);
-    }
-
+    
     /**
      * The attributes that are mass assignable.
      *
@@ -30,4 +22,14 @@ class Turkification extends Model
         'user_id',
         'ime',
     ];
+    
+    /**
+     * Get the user that owns the turkification.
+     */
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
+
+   
 }
